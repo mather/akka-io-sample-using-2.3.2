@@ -1,8 +1,8 @@
 package com.github.mather
 
+import scala.concurrent.duration._
 import akka.actor._
 import akka.pattern.ask
-import akka.util.duration._
 import akka.util.Timeout
 
 case object Tick
@@ -19,6 +19,8 @@ class Counter extends Actor {
 
 object AkkaIoSampleUsing232 extends App {
   val system = ActorSystem("AkkaIoSampleUsing232")
+
+  import system._
 
   val counter = system.actorOf(Props[Counter])
 
